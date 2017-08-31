@@ -1,6 +1,6 @@
 <h1>Inventario</h1>
-
-<table>
+</br>
+<table class="table table-striped">
   <thead>
     <th>usuario</th>
     <th>nº serie</th>
@@ -22,7 +22,7 @@
       <td><%= item.size %></td>
       <td><%= item.description %></td>
       <td><%= item.category.name %></td>
-      <td><%= link_to 'Destroy', { :action => :destroy, :id => item.id }, :method => :delete, :data => { :confirm => '¿estas seguro de eliminar este registro?' } %></td>
+      <td><%= link_to 'Eliminar', { :action => :destroy, :id => item.id }, :method => :delete, :data => { :confirm => '¿estas seguro de eliminar este registro?' }, class: 'glyphicon glyphicon-remove' %></td>
     </tr>
     <% end %>
   </tbody>
