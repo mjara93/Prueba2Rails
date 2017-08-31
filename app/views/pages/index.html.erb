@@ -1,0 +1,29 @@
+<h1>Inventario</h1>
+
+<table>
+  <thead>
+    <th>usuario</th>
+    <th>nº serie</th>
+    <th>nombre</th>
+    <th>tamaño</th>
+    <th>descripcion</th>
+    <th>categoria</th>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+    <tr>
+      <% if item.user != nil %>
+      <td><%= item.user.name %></td>
+      <% else %>
+      <td>sin usuario</td>
+      <% end %>
+      <td><%= item.serie %></td>
+      <td><%= item.name %></td>
+      <td><%= item.size %></td>
+      <td><%= item.description %></td>
+      <td><%= item.category.name %></td>
+      <td><%= link_to 'Destroy', { :action => :destroy, :id => item.id }, :method => :delete, :data => { :confirm => '¿estas seguro de eliminar este registro?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
